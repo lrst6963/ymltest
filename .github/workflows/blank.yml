@@ -30,7 +30,7 @@ jobs:
       run: |
         echo "工作流运行于：$(lsb_release -d)"
         sudo -E apt-get update
-        sudo -E apt-get -y aria2c curl wget
+        sudo -E apt-get -y curl wget
         sudo -E apt-get autoremove --purge
         sudo -E apt-get clean
 
