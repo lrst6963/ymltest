@@ -34,7 +34,15 @@ jobs:
         sudo -E apt-get autoremove --purge
         sudo -E apt-get clean
 
+    - name: New Floder | 新文件夹
+      env:
+        WORK_DIR: workdir
+      run: |
+        mkdir $WORK_DIR
+        cd $WORK_DIR
+
     - name: Work Code | 工作代码
+      working-directory: ./workdir
       env:
         OUT_NAME: test.zip
         IN_NAME: FirPE-V1.8.1.exe
@@ -46,4 +54,4 @@ jobs:
           uses: actions/upload-artifact@master
           with:
             name: TEST
-            path: ./
+            path: workdir
