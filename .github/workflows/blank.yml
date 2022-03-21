@@ -31,8 +31,8 @@ jobs:
 
     - name: Clone source code | 克隆源代码
       env:
-      OUT_NAME: test.zip
-      IN_NAME: FirPE-V1.8.1.exe
+        OUT_NAME: test.zip
+        IN_NAME: FirPE-V1.8.1.exe
       run: |
         zip $OUT_NAME $IN_NAME
 
