@@ -30,7 +30,7 @@ jobs:
       run: |
         echo "工作流运行于：$(lsb_release -d)"
         sudo -E apt-get update
-        sudo -E apt-get -y curl wget
+        sudo -E apt-get -y install aria2 curl wget
         sudo -E apt-get autoremove --purge
         sudo -E apt-get clean
 
@@ -47,7 +47,7 @@ jobs:
         OUT_NAME: test.zip
         IN_NAME: FirPE-V1.8.1.exe
       run: |
-        wget https://pan.69cc.pro/Tools/FirPE-V1.8.1.exe
+        aria2c -x16 https://pan.69cc.pro/Tools/FirPE-V1.8.1.exe -o $IN_NAME
         zip $OUT_NAME $IN_NAME
 
     - name: Upload a Build Artifact
