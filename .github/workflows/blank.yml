@@ -47,8 +47,8 @@ jobs:
         OUT_NAME: test.zip
         IN_NAME: FirPE-V1.8.1.exe
       run: |
-        aria2c -x16 https://pan.69cc.pro/Tools/FirPE-V1.8.1.exe -o $IN_NAME
-        zip $OUT_NAME $IN_NAME
+        ZIP_FILE_NAME="openwrt-ramips-mt7621-xiaomi_mi-router-3g-$(date +%Y%m%d%H%M).zip"
+        echo $ZIP_FILE_NAME
 
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@main
